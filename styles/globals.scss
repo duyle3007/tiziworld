@@ -1,0 +1,49 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./variables.scss";
+
+@font-face {
+  font-family: "Goudy Old Style";
+  src: url("../fonts/goudy-old-style/GOUDOS.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Whitney Book";
+  src: url("../fonts/whitney-book/whitney-book.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitneymedium.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#__next {
+  height: 100%;
+}
+
+.word-break {
+  word-break: break-word;
+}
+
+.error-btn {
+  @apply text-white bg-error border-error;
+  &:hover {
+    color: white !important;
+    border-color: red !important;
+  }
+}
+
+.text-green-bg {
+  background: rgba(0, 171, 85, 0.4);
+}
+.text-splash-through {
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 86, 48, 1);
+}
