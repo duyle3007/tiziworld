@@ -1,0 +1,33 @@
+.header {
+  @apply h-12 p-4 bg-red-800 flex bg-primary justify-between;
+}
+
+.drawerHeader {
+  border-bottom-right-radius: 40px;
+  :global(.ant-drawer-body) {
+    @apply flex flex-col p-0 pt-5;
+    background-color: #fcd9b0;
+  }
+  :global(.ant-drawer-content-wrapper) {
+    height: 60vh;
+    border-bottom-right-radius: 40px;
+  }
+  :global(.ant-drawer-content) {
+    border-bottom-right-radius: 40px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    margin-bottom: 20px;
+  }
+  .drawerItem {
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
+    font-size: 16px;
+    padding-left: 8px;
+    padding-block: 12px;
+    font-weight: bold;
+    @apply text-primary border-primary;
+  }
+}
