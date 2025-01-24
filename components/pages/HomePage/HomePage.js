@@ -1,20 +1,13 @@
-import { useEffect } from "react";
-
-import client from "@/utils/contentfulClient";
+import Banners from "@/components/Banners";
+import Intro from "@/components/Intro";
 
 const HomePage = () => {
-  useEffect(() => {
-    // Fetch banner data from Contentful
-    client
-      .getEntries({ content_type: "banner" }) // Replace 'banner' with your content type ID
-      .then((response) => {
-        console.log("hehe", response.items[0].fields.image);
-        // setBannerData(response.items);
-      })
-      .catch(console.error);
-  }, []);
-
-  return <div>Home page</div>;
+  return (
+    <div>
+      <Banners />
+      <Intro />
+    </div>
+  );
 };
 
 export default HomePage;

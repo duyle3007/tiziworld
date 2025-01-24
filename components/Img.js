@@ -1,4 +1,3 @@
-import { Image } from "antd";
 import { useMemo } from "react";
 
 const Img = ({ url, className }) => {
@@ -10,7 +9,7 @@ const Img = ({ url, className }) => {
     }
   }, [url]);
 
-  return <Image className={className} src={imgUrl} preview={false} />;
+  return <img className={className} src={imgUrl} />;
 };
 
 export default Img;

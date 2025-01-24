@@ -1,5 +1,7 @@
 .header {
-  @apply h-12 p-4 bg-red-800 flex bg-primary justify-between;
+  @apply h-12 bg-red-800 flex bg-primary justify-between;
+  padding-block: 8px;
+  padding-inline: 16px;
 }
 
 .drawerHeader {

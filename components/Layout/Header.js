@@ -1,17 +1,17 @@
 import { Drawer, Input } from "antd";
-import { useEffect, useState } from "react";
-import { MenuOutlined } from "@ant-design/icons";
+import { useContext, useEffect, useState } from "react";
+import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 
 import client from "@/utils/contentfulClient";
 import Img from "../Img";
 
 import styles from "./Header.module.scss";
-
-const { Search } = Input;
+import { FileContext } from "./Layout";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [logo, setLogo] = useState("");
+  const { logo } = useContext(FileContext);
+
   const showDrawer = () => {
     setOpen(true);
   };
@@ -19,24 +19,12 @@ const Header = () => {
     setOpen(false);
   };
 
-  useEffect(() => {
-    client
-      .getEntries({ content_type: "logo" })
-      .then((response) => {
-        console.log(
-          "response.items[0].fields.image.fields.file.url",
-          response.items[0].fields.image.fields.file.url
-        );
-        setLogo(response.items[0].fields.image.fields.file.url);
-      })
-      .catch(console.error);
-  }, []);
-
   return (
     <div className={styles.header}>
       <MenuOutlined onClick={showDrawer} className="text-white text-2xl" />
-      <Search
+      <Input
         placeholder="Nhập món ăn cần tìm..."
+        suffix={<SearchOutlined />}
         //   onSearch={onSearch}
         style={{
           width: 200,
