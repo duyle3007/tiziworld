@@ -1,0 +1,21 @@
+.allShopDetail {
+  :global(.slick-track) {
+    display: flex;
+    gap: 1rem;
+  }
+  :global(.slick-dots button:before) {
+    font-size: 10px;
+    color: white;
+  }
+  :global(.slick-dots li.slick-active button:before) {
+    color: white;
+  }
+  .foodName {
+    @apply text-xl font-bold text-primary px-2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
