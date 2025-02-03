@@ -3,9 +3,9 @@ import { FileContext } from "./Layout/Layout";
 import client from "@/utils/contentfulClient";
 import Img from "./Img";
 import Slider from "react-slick";
+import Slogan from "./Slogan";
 
 import styles from "./AllShopDetail.module.scss";
-import Slogan from "./Slogan";
 
 const settings = {
   dots: true,
@@ -13,7 +13,7 @@ const settings = {
   slidesToShow: 2,
   slidesToScroll: 1,
   arrows: false,
-  // autoplay: true,
+  autoplay: true,
 };
 
 const FoodItem = ({ food }) => {
@@ -45,7 +45,7 @@ const AllShopDetail = () => {
   return (
     <div
       style={{ backgroundImage: `url(${background})` }}
-      className={`flex px-2 py-10 flex-col text-center ${styles.allShopDetail}`}
+      className={`flex px-2 pt-10 flex-col text-center ${styles.allShopDetail}`}
     >
       <div className="uppercase text-2xl text-[#fcd9b0] font-bold mb-4">
         BÁN CHẠY NHẤT HỆ THỐNG
