@@ -1,0 +1,38 @@
+.customerFeedback {
+  :global(.slick-track) {
+    display: flex;
+    gap: 1rem;
+  }
+  :global(.slick-dots button:before) {
+    font-size: 10px;
+    color: white;
+  }
+  :global(.slick-dots li.slick-active button:before) {
+    color: white;
+  }
+  .feedbackContent {
+    @apply flex flex-col gap-2 pb-4 rounded-xl;
+    background-image: url("/images/feedback-bg.png");
+    background-size: 100% 100%;
+    padding: 25px 20px 50px 20px;
+  }
+  .customerName {
+    @apply text-xl font-bold text-primary;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+
+  .feedback {
+    @apply text-primary;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+}
