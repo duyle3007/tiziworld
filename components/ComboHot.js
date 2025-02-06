@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
+import Slider from "react-slick";
+
 import { FileContext } from "./Layout/Layout";
 import client from "@/utils/contentfulClient";
 import Img from "./Img";
-import Slider from "react-slick";
+import SocialMention from "./SocialMention";
+import YoutubeRecommend from "./YoutubeRecommend";
 
 import styles from "./AllShopDetail.module.scss";
-import SocialMention from "./SocialMention";
 
 const settings = {
   dots: true,
@@ -56,6 +58,7 @@ const ComboHot = () => {
         <div className="text-white p-3 mr-2">XEM THÊM</div>
       </div>
       <SocialMention />
+      <YoutubeRecommend />
     </div>
   );
 };

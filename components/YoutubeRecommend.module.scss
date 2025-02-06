@@ -1,0 +1,14 @@
+.youtubeRecommend {
+  @apply mb-12;
+  :global(.slick-track) {
+    display: flex;
+    gap: 1rem;
+  }
+  :global(.slick-dots button:before) {
+    font-size: 10px;
+    color: white;
+  }
+  :global(.slick-dots li.slick-active button:before) {
+    color: white;
+  }
+}

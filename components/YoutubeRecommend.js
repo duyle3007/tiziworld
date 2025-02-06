@@ -1,7 +1,12 @@
+import client from "@/utils/contentfulClient";
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 
-function AsNavFor() {
+import styles from "./YoutubeRecommend.module.scss";
+
+const YoutubeRecommend = () => {
+  const [listYoutubeRecommend, setListYoutubeRecommend] = useState([]);
+
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   let sliderRef1 = useRef(null);
@@ -11,59 +16,60 @@ function AsNavFor() {
     setNav1(sliderRef1);
     setNav2(sliderRef2);
   }, []);
+
+  useEffect(() => {
+    client
+      .getEntries({ content_type: "youtubeRecommend" })
+      .then((response) => {
+        setListYoutubeRecommend(response.items);
+      })
+      .catch(console.error);
+  }, []);
+
+  const getYoutubeId = (youtubeLink) => {
+    console.log("youtubeLink", youtubeLink);
+    return youtubeLink.split("embed/")[1];
+  };
+
   return (
-    <div className="slider-container">
-      <h2>Slider Syncing (AsNavFor)</h2>
-      <h4>First Slider</h4>
-      <Slider asNavFor={nav2} ref={(slider) => (sliderRef1 = slider)}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
+    <div className={styles.youtubeRecommend}>
+      <Slider
+        asNavFor={nav2}
+        ref={(slider) => (sliderRef1 = slider)}
+        arrows={false}
+      >
+        {listYoutubeRecommend.map((youtubeLink) => (
+          <iframe
+            key={youtubeLink.fields.link}
+            src={youtubeLink.fields.link}
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="video"
+            height="370"
+          />
+        ))}
       </Slider>
-      <h4>Second Slider</h4>
       <Slider
         asNavFor={nav1}
         ref={(slider) => (sliderRef2 = slider)}
         slidesToShow={3}
         swipeToSlide={true}
         focusOnSelect={true}
+        dots
+        arrows={false}
+        className="mt-4"
       >
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
+        {listYoutubeRecommend.map((youtubeLink) => (
+          <img
+            src={`https://img.youtube.com/vi/${getYoutubeId(
+              youtubeLink.fields.link
+            )}/0.jpg`}
+          />
+        ))}
       </Slider>
     </div>
   );
-}
+};
 
-export default AsNavFor;
+export default YoutubeRecommend;
