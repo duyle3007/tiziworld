@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import { renderClient } from "@/utils/utils";
 import Header from "./Header";
 import client from "@/utils/contentfulClient";
+import Footer from "./Footer";
 
 export const FileContext = createContext();
 
@@ -30,7 +31,7 @@ const Layout = ({ children }) => {
     <FileContext.Provider value={{ logo, background }}>
       <Header />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </FileContext.Provider>
   );
 };

@@ -1,0 +1,13 @@
+.footer {
+  @apply bg-primary2 pt-6 px-4 pb-2 flex flex-col gap-2;
+  :global(.ant-collapse-header) {
+    align-items: center !important;
+    padding: 0 !important;
+  }
+  :global(.ant-collapse-item) {
+    margin-bottom: 20px;
+  }
+  :global(.ant-collapse-arrow) {
+    @apply text-primary text-2xl #{!important};
+  }
+}
