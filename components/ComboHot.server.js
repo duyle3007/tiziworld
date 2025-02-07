@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
+import Slider from "react-slick";
+
 import { FileContext } from "./Layout/Layout";
 import client from "@/utils/contentfulClient";
 import Img from "./Img";
-import Slider from "react-slick";
-import Slogan from "./Slogan";
+import SocialMention from "./SocialMention.server";
+import YoutubeRecommend from "./YoutubeRecommend.server";
 
 import styles from "./AllShopDetail.module.scss";
 
@@ -29,7 +31,7 @@ const FoodItem = ({ food }) => {
   );
 };
 
-const AllShopDetail = () => {
+const ComboHot = () => {
   const { background } = useContext(FileContext);
   const [listFood, setListFood] = useState([]);
 
@@ -47,18 +49,18 @@ const AllShopDetail = () => {
       style={{ backgroundImage: `url(${background})` }}
       className={`flex px-2 pt-10 flex-col text-center ${styles.allShopDetail}`}
     >
-      <div className="uppercase text-2xl text-[#fcd9b0] font-bold mb-4">
-        BÁN CHẠY NHẤT HỆ THỐNG
-      </div>
       <Slider {...settings}>
         {listFood.map((food, foodIndex) => (
           <FoodItem key={foodIndex} food={food} />
         ))}
       </Slider>
-
-      <Slogan />
+      <div className="flex rounded-3xl bg-[#9a6d59] w-fit self-center mt-10 pl-2">
+        <div className="text-white p-3 mr-2">XEM THÊM</div>
+      </div>
+      <SocialMention />
+      <YoutubeRecommend />
     </div>
   );
 };
 
-export default AllShopDetail;
+export default ComboHot;

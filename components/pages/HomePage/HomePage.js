@@ -1,9 +1,9 @@
-import AllShopDetail from "@/components/AllShopDetail";
-import Banners from "@/components/Banners";
-import ComboHot from "@/components/ComboHot";
-import CustomerFeedback from "@/components/CustomerFeedback";
-import Intro from "@/components/Intro";
-import NoticeBanner from "@/components/NoticeBanner";
+import AllShopDetail from "@/components/AllShopDetail.server";
+import Banners from "@/components/Banners.server";
+import ComboHot from "@/components/ComboHot.server";
+import CustomerFeedback from "@/components/CustomerFeedback.server";
+import Intro from "@/components/Intro.server";
+import NoticeBanner from "@/components/NoticeBanner.server";
 
 const HomePage = () => {
   return (

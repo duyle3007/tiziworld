@@ -44,3 +44,8 @@ const Intro = () => {
 };
 
 export default Intro;
+
+async function fetchDataFromServer() {
+  // Normally, you’d call an API or a database here
+  return "Server-side data fetched successfully";
+}
