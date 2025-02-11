@@ -5,7 +5,12 @@ import { FileContext } from "./Layout/Layout";
 import client from "@/utils/contentfulClient";
 
 const convertYoutubeLink = (link) => {
-  const videoId = link.split("v=")[1];
+  let videoId;
+  if (link.includes("v=")) {
+    videoId = link.split("v=")[1];
+  } else {
+    videoId = link.split("shorts/")[1];
+  }
   return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1`;
 };
 
