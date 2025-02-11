@@ -42,13 +42,12 @@ const Header = () => {
           <Img url={logo} className={styles.logo} />
         </div>
         <div className={styles.drawerItem}>TRANG CHỦ</div>
-        <div className={styles.drawerItem}>GIỚI THIỆU</div>
-        <div className={styles.drawerItem}>XEM MENU</div>
+        <div className={styles.drawerItem}>ĐỊA ĐIỂM - GIÁ VÉ</div>
         <div className={styles.drawerItem}>ĐẶT MÓN</div>
-        <div className={styles.drawerItem}>ĐẶT BÀN</div>
-        <div className={styles.drawerItem}>BẢNG TIN</div>
-        <div className={styles.drawerItem}>LIÊN HỆ</div>
-        <div className={styles.drawerItem}>NHƯỢNG QUYỀN</div>
+        <div className={styles.drawerItem}>ĐẶT TIỆC SINH NHẬT</div>
+        <div className={styles.drawerItem}>TIN TỨC</div>
+        <div className={styles.drawerItem}>TUYỂN DỤNG</div>
+        <div className={styles.drawerItem}>VỀ TIZI KIDZPLAY COFFEE</div>
       </Drawer>
     </div>
   );
