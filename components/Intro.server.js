@@ -4,6 +4,11 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import { FileContext } from "./Layout/Layout";
 import client from "@/utils/contentfulClient";
 
+const convertYoutubeLink = (link) => {
+  const videoId = link.split("v=")[1];
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1`;
+};
+
 const Intro = () => {
   const { background } = useContext(FileContext);
   const [introInfo, setIntroInfo] = useState({});
@@ -22,12 +27,15 @@ const Intro = () => {
       style={{ backgroundImage: `url(${background})` }}
       className="flex px-2 py-10 flex-col "
     >
-      <video className="w-full rounded-xl" controls autoPlay muted loop>
-        {introInfo?.videoUrl && (
-          <source src={introInfo.videoUrl} type="video/mp4" />
-        )}
-        Your browser does not support the video tag.
-      </video>
+      {introInfo?.videoUrl && (
+        <iframe
+          id="myIframe"
+          className="w-full rounded-xl h-60"
+          src={convertYoutubeLink(introInfo.videoUrl)}
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      )}
 
       <div className="flex flex-col bg-[#3e0c0c] p-10 rounded-xl text-[#fcd9b0] gap-4 mt-4 text-center border-primary2 border border-solid">
         <div className="uppercase text-2xl">{introInfo.title}</div>

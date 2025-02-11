@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import Slogan from "./Slogan.server";
 
 import styles from "./AllShopDetail.module.scss";
+import Link from "next/link";
 
 const settings = {
   dots: true,
@@ -18,7 +19,10 @@ const settings = {
 
 const FoodItem = ({ food }) => {
   return (
-    <div className="bg-primary2 flex flex-col gap-4 h-70 pb-4 rounded-xl">
+    <div
+      className="bg-primary2 flex flex-col gap-4 h-70 pb-4 rounded-xl"
+      onClick={() => window.open(food.fields.linkOrder, "_blank")}
+    >
       <Img
         url={food.fields.image.fields.file.url}
         className="w-full h-36 rounded-tl-xl rounded-tr-xl"

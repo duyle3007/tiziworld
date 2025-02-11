@@ -27,7 +27,6 @@ const YoutubeRecommend = () => {
   }, []);
 
   const getYoutubeId = (youtubeLink) => {
-    console.log("youtubeLink", youtubeLink);
     return youtubeLink.split("embed/")[1];
   };
 
@@ -62,9 +61,14 @@ const YoutubeRecommend = () => {
       >
         {listYoutubeRecommend.map((youtubeLink) => (
           <img
-            src={`https://img.youtube.com/vi/${getYoutubeId(
-              youtubeLink.fields.link
-            )}/0.jpg`}
+            className="h-20 object-contain"
+            src={
+              youtubeLink.fields.link.includes("tiktok")
+                ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhlTMmtuHFfS_8ITOUrrXLRNTA1hKyacadAg&s"
+                : `https://img.youtube.com/vi/${getYoutubeId(
+                    youtubeLink.fields.link
+                  )}/0.jpg`
+            }
           />
         ))}
       </Slider>

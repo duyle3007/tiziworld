@@ -49,14 +49,14 @@ const ComboHot = () => {
       style={{ backgroundImage: `url(${background})` }}
       className={`flex px-2 pt-10 flex-col text-center ${styles.allShopDetail}`}
     >
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         {listFood.map((food, foodIndex) => (
           <FoodItem key={foodIndex} food={food} />
         ))}
       </Slider>
       <div className="flex rounded-3xl bg-[#9a6d59] w-fit self-center mt-10 pl-2">
         <div className="text-white p-3 mr-2">XEM THÊM</div>
-      </div>
+      </div> */}
       <SocialMention />
       <YoutubeRecommend />
     </div>
