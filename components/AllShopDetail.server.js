@@ -6,16 +6,6 @@ import Slider from "react-slick";
 import Slogan from "./Slogan.server";
 
 import styles from "./AllShopDetail.module.scss";
-import Link from "next/link";
-
-const settings = {
-  dots: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: false,
-  autoplay: true,
-};
 
 const FoodItem = ({ food }) => {
   return (
@@ -36,6 +26,15 @@ const FoodItem = ({ food }) => {
 const AllShopDetail = () => {
   const { background } = useContext(FileContext);
   const [listFood, setListFood] = useState([]);
+
+  const settings = {
+    dots: true,
+    speed: 500,
+    slidesToShow: window.screen.width >= 1280 ? 4 : 2,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+  };
 
   useEffect(() => {
     client

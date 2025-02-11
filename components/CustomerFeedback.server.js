@@ -7,17 +7,6 @@ import Slider from "react-slick";
 import styles from "./CustomerFeedback.module.scss";
 import FastMarquee from "./FastMarquee";
 
-const settings = {
-  className: "center",
-  centerMode: true,
-  infinite: true,
-  dots: true,
-  centerPadding: "60px",
-  slidesToShow: 1,
-  arrows: false,
-  speed: 500,
-};
-
 const Feedback = ({ customer }) => {
   return (
     <div className="flex flex-col gap-6 h-70 pb-4">
@@ -36,6 +25,17 @@ const Feedback = ({ customer }) => {
 const CustomerFeedback = () => {
   const { background } = useContext(FileContext);
   const [listCustomerFeedback, setListCustomerFeedback] = useState([]);
+
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    dots: true,
+    centerPadding: "60px",
+    slidesToShow: window.screen.width >= 1280 ? 3 : 1,
+    arrows: false,
+    speed: 500,
+  };
 
   useEffect(() => {
     client

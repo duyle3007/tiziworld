@@ -25,7 +25,7 @@ const Intro = () => {
   return (
     <div
       style={{ backgroundImage: `url(${background})` }}
-      className="flex px-2 py-10 flex-col "
+      className="flex px-2 py-10 flex-col items-center lg:flex-row"
     >
       {introInfo?.videoUrl && (
         <iframe
