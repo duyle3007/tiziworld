@@ -32,15 +32,27 @@ const Intro = () => {
       style={{ backgroundImage: `url(${background})` }}
       className="flex px-2 py-10 flex-col items-center lg:flex-row"
     >
-      {introInfo?.videoUrl && (
+      <video
+        className="w-full h-[400px] rounded-xl"
+        controls
+        autoPlay
+        muted
+        loop
+      >
+        {introInfo?.clipUrl && (
+          <source src={introInfo?.clipUrl} type="video/mp4" />
+        )}
+        Your browser does not support the video tag.
+      </video>
+      {/* {introInfo?.clipUrl && (
         <iframe
           id="myIframe"
           className="w-full rounded-xl h-60"
-          src={convertYoutubeLink(introInfo.videoUrl)}
+          src={convertYoutubeLink(introInfo.clipUrl)}
           frameborder="0"
           allowfullscreen
         ></iframe>
-      )}
+      )} */}
 
       <div className="flex flex-col bg-[#3e0c0c] p-10 rounded-xl text-[#fcd9b0] gap-4 mt-4 text-center border-primary2 border border-solid">
         <div className="uppercase text-2xl">{introInfo.title}</div>

@@ -15,7 +15,7 @@ const FoodItem = ({ food }) => {
     >
       <Img
         url={food.fields.image.fields.file.url}
-        className="w-full h-36 rounded-tl-xl rounded-tr-xl"
+        className="w-full h-60 rounded-tl-xl rounded-tr-xl object-cover"
       />
       <div className={styles.foodName}>{food.fields.name}</div>
       <div className="font-bold">XEM THÊM</div>
